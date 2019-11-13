@@ -1,0 +1,9 @@
+Installer openoffice 2.0.1 ou 2.0.3 (bug avec la 2.0.2 !)
+
+Faire dans une ligne de commande :
+
+
+sous windows aller sur C:\Program Files\OpenOffice.org 2.0\program>
+
+
+soffice -headless -accept="socket,port=8100;urp;"

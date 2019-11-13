@@ -1,0 +1,8 @@
+<%-- USEBEAN --%>
+<jsp:useBean id="articlenew" scope="session" class="dang.article.ArticleNew"/>
+<jsp:useBean id="articlemoderate" scope="session" class="dang.article.ArticleModerate"/>
+<jsp:useBean id="articleapprove" scope="session" class="dang.article.ArticleApprove"/>
+<jsp:useBean id="articlelist" scope="session" class="dang.article.ArticleList"/>
+<jsp:useBean id="articleview" scope="session" class="dang.article.ArticleView"/>
+<jsp:useBean id="articlecom" scope="session" class="dang.article.ArticleComment"/>
+<jsp:useBean id="articlecat" scope="session" class="dang.article.AdminCategory" />

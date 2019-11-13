@@ -1,0 +1,1 @@
+<c:redirect url="snmpalert.jsp"/>

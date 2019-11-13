@@ -1,0 +1,8 @@
+<c:set var="MODULEID" scope="page" value="12"/>
+<jsp:setProperty name="usernavig" property="currentModuleId" value="${MODULEID}"/>
+
+<jsp:useBean id="archivelsearch" scope="session" class="dang.mailarchive.UserSearch"/>
+<jsp:setProperty name="archivelsearch" property="userId" value="${usersession.userId}"/>
+
+<jsp:useBean id="archivelview" scope="session" class="dang.mailarchive.UserView"/>
+<jsp:setProperty name="archivelview" property="userId" value="${usersession.userId}"/>

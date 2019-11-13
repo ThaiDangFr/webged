@@ -1,0 +1,7 @@
+<%-- GLOBAL VARS --%>
+<jsp:useBean id="inbox" scope="session" class="dang.cmsbase.Inbox"/>
+<jsp:useBean id="inboxcompose" scope="session" class="dang.cmsbase.InboxCompose"/>
+<jsp:useBean id="inboxcontact" scope="session" class="dang.cmsbase.InboxContact"/>
+<jsp:useBean id="useredit" scope="session" class="dang.cmsbase.UserEdit"/>
+<jsp:useBean id="usermenu" scope="session" class="dang.cmsbase.UserMenu" />
+<jsp:useBean id="filebasebean" scope="session" class="dang.cmsbase.FileBaseBean" />

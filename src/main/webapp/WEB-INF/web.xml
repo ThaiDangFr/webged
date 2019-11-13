@@ -1,0 +1,102 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+
+	<display-name>WebGed</display-name>
+	<description>Gestion Electronique De Document</description>
+
+
+	
+	<servlet>
+    <servlet-name>Navig</servlet-name>
+    <description>Secured navigation servlet</description>
+    <servlet-class>dang.cmsbase.ServletNavig</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>Navig</servlet-name>
+      <url-pattern>*.navig</url-pattern>
+    </servlet-mapping>
+	
+	
+		<!-- 
+	javax.sql.DataSource ds = (javax.sql.DataSource) ctx.lookup("myDataSource");
+	-->
+	<!-- 
+  <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/DataSource</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+  -->
+
+<error-page> 
+  <exception-type>java.lang.Throwable</exception-type> 
+  <location>/common/error.jsp</location> 
+</error-page>
+
+<jsp-config> 
+  <jsp-property-group> 
+   <url-pattern>*.jsp</url-pattern> 
+   <include-prelude>/common/header.jspf</include-prelude> 
+   <include-coda>/common/footer.jspf</include-coda> 
+  </jsp-property-group>
+
+
+
+
+<taglib>
+    <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+	<taglib-location>/WEB-INF/tld/c.tld</taglib-location> 
+</taglib>
+
+
+
+<taglib>
+	<taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+	<taglib-location>/WEB-INF/tld/fmt.tld</taglib-location> 
+</taglib>
+
+
+
+<taglib>
+	<taglib-uri>http://jakarta.apache.org/taglibs/response</taglib-uri>
+	<taglib-location>/WEB-INF/tld/taglibs-response.tld</taglib-location> 
+</taglib>
+
+
+
+<taglib>
+	<taglib-uri>http://jakarta.apache.org/taglibs/input</taglib-uri>
+	<taglib-location>/WEB-INF/tld/taglibs-input.tld</taglib-location> 
+</taglib>
+
+
+
+<taglib>
+	<taglib-uri>http://java.sun.com/jstl/fn</taglib-uri>
+	<taglib-location>/WEB-INF/tld/fn.tld</taglib-location> 
+</taglib>
+
+
+
+<taglib>
+	<taglib-uri>http://www.dangconsulting.fr/taglib/sr</taglib-uri>
+	<taglib-location>/WEB-INF/tld/dangconsulting.tld</taglib-location> 
+</taglib>
+</jsp-config>
+
+
+    <servlet>
+         <servlet-name>Initialiser</servlet-name>
+         <servlet-class>dang.applimgt.Starter</servlet-class>
+         <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+<welcome-file-list>
+	<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+    
+</web-app>

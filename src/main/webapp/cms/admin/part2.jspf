@@ -1,0 +1,26 @@
+<%-- This page is used by USER and ADMIN view to display bean message --%>
+
+<%-- STATUS MESSAGE BEG --%>
+<c:set var="ml" value="${message.list}" scope="page"/>
+
+
+<c:if test="${not empty ml}">
+
+<div id="statusmessage">
+    <c:choose>
+        <c:when test="${message.info}"><div class="info"></c:when>
+		<c:when test="${message.warning}"><div class="warning"></c:when>
+		<c:otherwise><div class="error"></c:otherwise>
+    </c:choose>
+    
+    <sr:out array="${ml}"/>
+    </div>
+</div>
+
+<script language="JavaScript" type="text/JavaScript">
+setTimeout('document.getElementById("statusmessage").style.visibility = "hidden"; ',5000);
+</script>
+
+
+</c:if>
+<%-- STATUS MESSAGE END --%>

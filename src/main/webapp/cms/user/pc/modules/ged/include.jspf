@@ -1,0 +1,9 @@
+<jsp:useBean id="udir" scope="session" class="dang.ged.UserDirectory"/>
+<jsp:useBean id="ubrowser" scope="session" class="dang.ged.UserBrowser"/>
+<jsp:useBean id="ufile" scope="session" class="dang.ged.UserFile"/>
+<jsp:useBean id="tsearch" scope="session" class="dang.ged.UserSearchTemplate"/>
+<jsp:useBean id="utrash" scope="session" class="dang.ged.UserTrash"/>
+<jsp:useBean id="ugstate" scope="session" class="dang.ged.UserGedState"/>
+<jsp:useBean id="utodo" scope="session" class="dang.ged.UserTodo"/>
+
+<c:set target="${utodo}" property="userId" value="${usersession.userId}"/>

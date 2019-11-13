@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+  <description>Dangconsulting taglib</description>
+  <display-name>dangconsulting</display-name>
+  <tlib-version>1.0</tlib-version>
+  <short-name>sr</short-name>
+  <uri>http://www.dangconsulting.fr/taglib/sr</uri>
+
+
+  <tag>
+  <name>xhtml</name>
+  <tag-class>openplatform.taglibs.Xhtml</tag-class>
+  <body-content>JSP</body-content>
+  </tag>
+
+  <tag>
+  <name>head</name>
+  <tag-class>openplatform.taglibs.Head</tag-class>
+  <body-content>JSP</body-content>
+  <attribute>
+  <name>title</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+  <name>body</name>
+  <tag-class>openplatform.taglibs.Body</tag-class>
+  <body-content>JSP</body-content>
+  <attribute>
+  <name>title</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>attributesText</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+  <name>param</name>
+  <tag-class>openplatform.taglibs.Param</tag-class>
+  <body-content>empty</body-content>
+  <attribute>
+  <name>name</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>value</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute> 
+  </tag> 
+
+  <tag>
+  <description>
+  [title] : html title
+  [fileBaseId]
+  [extension] : ex. jpg, png, etc.
+  [param] : ex. 800x600 (widthxheight)
+  </description>
+  <name>img</name>
+  <tag-class>openplatform.taglibs.Img</tag-class>
+  <body-content>JSP</body-content>
+  
+  <attribute>
+  <name>title</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>fileBaseId</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>extension</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>param</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  </tag>
+
+  <tag>
+    <description>
+  You can use [href] OR [fileBaseId]
+  [target] : exemple _blank
+  [onclick] : javascript
+  [title] : image title
+  [myclass] : css class
+  [extension] : converted file extension
+  [param] : converted param
+  </description>
+  <name>a</name>
+  <tag-class>openplatform.taglibs.A</tag-class>
+  <body-content>JSP</body-content>
+    
+  <attribute>
+  <name>href</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>fileBaseId</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>target</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>onclick</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>onmousedown</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>  
+  
+  <attribute>
+  <name>title</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>myclass</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>extension</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  
+  <attribute>
+  <name>param</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+  <name>form</name>
+  <tag-class>openplatform.taglibs.Form</tag-class>
+  <body-content>JSP</body-content>
+  <attribute>
+  <name>method</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>action</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>submitstring</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute> 
+  </tag>
+
+  <tag>
+    <description>
+  [type] can be : text, hidden, password, checkbox, textarea
+  </description>
+  <name>input</name>
+  <tag-class>openplatform.taglibs.Input</tag-class>
+  <body-content>empty</body-content>
+  <attribute>
+  <name>type</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>  
+  </attribute>
+  <attribute>
+  <name>name</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>  
+  </attribute>
+  <attribute>
+  <name>value</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>  
+  </attribute>
+  <attribute>
+  <name>size</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>  
+  </attribute>
+  <attribute>
+  <name>checked</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>  
+  </attribute>
+  <attribute>
+  <name>attributesText</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>  
+  </attribute>
+  </tag>
+
+  <tag>
+    <description>
+  [align] can be : left, center, right
+  </description>
+  <name>table</name>
+  <tag-class>openplatform.taglibs.Table</tag-class>
+  <body-content>JSP</body-content>
+  <attribute>
+  <name>columns</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>align</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>bgcolor</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>width</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>cssClass</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+    <description>
+  [name] : string,
+  [multiple] : true | false,
+  [options] : map (value - display string),
+  [defaultOption] : string
+  </description>
+  <name>select</name>
+  <tag-class>openplatform.taglibs.Select</tag-class>
+  <body-content>empty</body-content>
+  <attribute>
+  <name>name</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>multiple</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>options</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>defaultOption</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>size</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>defaultOptionList</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>defaultOptionArray</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>attributesText</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+  <name>br</name>
+  <tag-class>openplatform.taglibs.Br</tag-class>
+  <body-content>empty</body-content>
+  </tag>
+
+  <tag>
+    <description>
+  [value] : string,
+  [array] : arraylist,
+  [specialtag] : true | false - If tags like [url=...]..[/url] are interpreted
+  </description>
+  <name>out</name>
+  <tag-class>openplatform.taglibs.Out</tag-class>
+  <body-content>empty</body-content>
+
+  <attribute>
+  <name>value</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>array</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>specialtag</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>unit</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+    <description>
+  [name] : string,
+  [options] : map (value - display string),
+  [defaultOption] : string
+  </description>
+  <name>radio</name>
+  <tag-class>openplatform.taglibs.Radio</tag-class>
+  <body-content>empty</body-content>
+  <attribute>
+  <name>name</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>options</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>defaultOption</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+    <description>
+  [menuId] : the menuId in the TreeMenu table
+  </description>
+  <name>treemenu</name>
+  <tag-class>openplatform.taglibs.TreeMenu</tag-class>
+  <body-content>empty</body-content>
+  <attribute>
+  <name>menuId</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>  
+  </tag>
+
+  <tag>
+  <name>cmstrace</name>
+  <tag-class>openplatform.taglibs.CmsTrace</tag-class>
+  <body-content>empty</body-content>
+  <attribute>
+  <name>moduleId</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>object</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>action</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>statusMsg</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>statusUserId</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>statusGroupId</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  <attribute>
+  <name>ipAddress</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag> 
+
+  <tag>
+    <description>
+  Create a table with all the fields and values.
+  [label] is for example name|age,
+  [property] are the getter methods separate by |,
+  [propType] : input - select - multiple - text - textarea
+  </description>
+  <name>widget</name>
+  <tag-class>openplatform.taglibs.Widget</tag-class>
+  <body-content>JSP</body-content>
+  
+  <attribute>
+  <name>type</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>title</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>bean</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>cssClass</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>label</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>property</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>propType</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>propSize</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+
+  <tag>
+    <description>
+  Save the param value in a bean.
+  [bean] the bean,
+  [property] list of bean property separate by |,
+  [value] list of optional value (if not precised, it uses the ${param.property})
+  </description>
+  <name>set</name>
+  <tag-class>openplatform.taglibs.Set</tag-class>
+  <body-content>JSP</body-content>
+  
+  <attribute>
+  <name>bean</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>property</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+
+  <tag>
+    <description>
+  Call a method in the bean : public String doYourProperty() throws Exception {},
+  [bean] the bean,
+  [property] list of bean property separate by |,
+  [redirectOk] the jsp to follow when the action is done successfully
+  [redirectError] the jsp to follow when there is an error
+  </description>
+  <name>do</name>
+  <tag-class>openplatform.taglibs.Do</tag-class>
+  <body-content>JSP</body-content>
+  
+  <attribute>
+  <name>bean</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>property</name>
+  <required>true</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>redirectOk</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+
+  <attribute>
+  <name>redirectError</name>
+  <required>false</required>
+  <rtexprvalue>true</rtexprvalue>
+  </attribute>
+  </tag>
+  
+  
+  
+	<tag>
+  		<name>mediaplayer</name>
+	  	<tag-class>openplatform.taglibs.MediaPlayer</tag-class>
+		<body-content>JSP</body-content>
+		
+		<attribute>
+			<name>fileBaseId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+  
+  
+  
+</taglib>

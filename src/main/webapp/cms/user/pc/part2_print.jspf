@@ -1,0 +1,7 @@
+</div>
+
+
+      <h3 style="text-align:center"><c:out value="${usernavig.footer}" escapeXml="false"/></h3>
+
+  </body>
+</html>

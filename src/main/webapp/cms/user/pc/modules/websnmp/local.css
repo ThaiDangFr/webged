@@ -1,0 +1,106 @@
+#header h1 {
+/* see http://www.3dtextmaker.com/cgi-bin/3dtext.pl (annifont) */
+background: transparent url(images/websnmp.gif) right center no-repeat;
+}
+
+#header h1 span {
+display:none;
+}
+
+#main-copy table {
+border:1px solid #b5d0f5; /* blue */
+}
+
+#main-copy table.horizontal  th {
+background-color: #b5d0f5; /* blue */
+}
+
+#graph {
+background-color: #b5d0f5; /* blue */
+padding:0.64em;
+}
+
+#graph table {
+border:none;
+text-align:center;
+width:auto;
+}
+
+#graph table tr {
+border: 0.4em solid #b5d0f5; /* blue */
+}
+
+#graph a{
+margin-left:1.6em;
+}
+
+ul#hostlist li {
+list-style-type: square;
+text-transform:capitalize;
+}
+
+ul#hostlist li:hover {
+color:red;
+}
+
+h2 {
+color: #666;
+}
+
+ul#action {
+list-style-type: square;
+background-color: #cddff6; /* light blue */
+margin:0;
+padding:0.64em;
+}
+
+ul#action li {
+margin:0.4em;
+margin-left: 4em;
+}
+
+ul#action li:hover {
+color:red;
+}
+
+ul#action form {
+margin:0;
+padding:0;
+}
+
+ul#action input:hover {
+border:1px outset #000;
+}
+
+div#actionresult {
+background-color: #cdf6d9;
+margin:0;
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+padding:0.64em;
+margin-bottom:1.6em;
+}
+
+table#alert {
+border: 1px solid #cddff6; /* light blue */
+}
+
+table#alert th {
+text-align:center;
+}
+
+table#alert tr.title th{
+background-color: #cddff6; /* light blue */
+}
+
+table#alert tr.error {
+font-weight:normal;
+color:red;
+}
+
+table#alert tr.warning {
+font-weight:normal;
+color:orange;
+}

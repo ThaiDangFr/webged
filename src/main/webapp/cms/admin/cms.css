@@ -1,0 +1,204 @@
+#statusmessage {
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+background-color:#fff;
+font-family: verdana, helvetica, arial, sans-serif;
+font-size:smaller;
+float:center;
+display:block;
+top:1em;
+left:40%;
+width:20em;
+position:absolute;
+padding:1em;
+text-align:center;
+filter : Alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+}
+
+
+.info
+{
+color: green;
+font-weight : bold;
+text-align : center;
+}
+.warning
+{
+color: yellow;
+font-weight : bold;
+text-align : center;
+}
+.error
+{
+color: red;
+font-weight : bold;
+text-align : center;
+}
+
+.leftSideBar
+{
+background-color:rgb(243,242,235);
+border-right: 1px solid rgb(216,210,195);
+border-bottom: 1px solid rgb(216,210,195);
+}
+
+.rightSideBar
+{
+background-color:rgb(243,242,235);
+}
+
+body
+{
+background-color: white;
+}
+
+input,textarea {
+text-decoration: none; 
+color : black;
+border : 1px solid #d0d0d0;
+}
+input:hover{
+background-color: #FFFFFF;
+}
+
+#header {
+background: transparent url(header.jpg) left top no-repeat;
+border-bottom:2em solid #000;
+height:80px;
+}
+
+#header div.subHeader span {
+background-color: #FFFFFF;
+color : black;
+padding: 0 1ex;
+}
+
+#header h1.headerTitle {
+padding-top:20px;
+padding-bottom:15px;
+}
+
+#main-copy {
+border:none;
+}
+
+#main-copy a {
+text-decoration: none; 
+color:#00a2ff;
+font-weight : bold;
+}
+
+#main-copy a:hover{ 
+color:#7e7e7e;
+}
+
+#main-copy table{
+margin-bottom:1.5em;
+border : 1px solid #d6d6d6;
+border-collapse: collapse;
+width:100%;
+}
+
+#main-copy table caption{
+margin-top : 0.8em;
+border-bottom : 0.4em solid rgb(230,223,207);
+font-weight : bold;
+text-transform:uppercase;
+text-align:center;
+width:20%;
+/*
+padding-right : 0.4em;
+margin-right:79%;
+*/
+}
+
+#main-copy table.horizontal th{
+width:30%;
+padding-right : 0.4em;
+text-align : right;
+}
+
+#main-copy table th{
+background-color: #f0ebdf;
+}
+
+#main-copy table td{
+vertical-align : top;
+background-color: rgb(243,242,235);
+}
+
+#main-copy td.button {
+text-align : right;
+}
+
+#main-copy textarea{
+width : 98%;
+height : 8em;
+}
+
+
+
+
+table#trace {
+border-collapse:separate;
+text-align:center;
+}
+
+table#trace tr td{
+padding:0.4em;
+}
+
+
+
+#login{
+margin-top : 4em;
+}
+
+#login table{
+width : 36em;
+text-align : right;
+padding : 0.8em;
+border : 1px outset rgb(243,242,235);
+border-top : none;
+background-color : rgb(243,242,235);
+font-size : 70%;
+margin : auto;
+}
+
+#login table caption{
+font-weight: bold;
+background-color : #171bc2;
+color : #FFFFFF;
+padding : 0.8em;
+border : 1px outset black;
+border-bottom : none;
+margin : auto;
+}
+
+#login table th{
+color : rgb(166,140,83);
+width : 22.4em;
+}
+
+#login table td.button input{
+margin-top : 0.8em;
+margin-bottom : 0.8em;
+}
+
+#login table td.button input:hover{
+background-color : #FFFFFF;
+}
+
+#login table td.error{
+color : red;
+}
+
+#login table td.newaccount{
+color : red;
+text-align : right;
+}

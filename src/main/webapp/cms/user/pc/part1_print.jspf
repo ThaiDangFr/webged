@@ -1,0 +1,106 @@
+<%-- urlbase must be in that page, otherwise it does not work... --%>
+<c:set var="URLBASE" value="/cms/user/pc/modules" scope="page"/>
+<c:set var="PREFIX"  value="/openplatform/cms/user/pc/modules" scope="page"/>
+
+
+<c:if test="${usernavig.refreshPage}"/>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"/>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"/>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <style type="text/css">@import url(/openplatform/cms/user/pc/cms.css);</style>
+    <style type="text/css">@import url(/openplatform/css/tablefilter.css);</style>
+    
+    <style type="text/css">
+    
+    body {
+  color: black;
+  background-color: white;
+  font-family: "times new roman", times, roman, serif;
+  font-size: 10pt;
+  margin: 10px;
+  padding: 0;
+}
+    
+#main-copy {
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+    
+    a {
+    	text-decoration:none;
+    }
+    
+    
+    /* Sortable tables */
+#main-copy table#usergedstate a.sortheader {
+    color:#666666;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    text-align:center;
+}
+#main-copy  table#usergedstate span.sortarrow {
+    color: red;
+    text-decoration: none;
+}
+
+#main-copy table#usergedstate th {
+	font-size:0.85em;
+	text-align:center;
+	background-color:#ccc;
+	border: 1px solid #aaa;
+	padding: 2px;
+}
+
+#main-copy table#usergedstate td {
+	text-align:center;
+	border: 1px solid #aaa;
+	padding:2px;
+}
+
+    </style>
+    
+    <link rel="SHORTCUT ICON" href="/openplatform/favicon.ico"/>
+    <script language="JavaScript" src="/openplatform/js/common.js" type="text/JavaScript"></script>
+    <script language="JavaScript" src="/openplatform/js/calendar/calendar1.js"></script>
+    <script language="JavaScript" src="/openplatform/js/sorttable.js"></script>
+    <script language="JavaScript" src="/openplatform/js/sortselect.js"></script>
+    <script language="JavaScript" src="/openplatform/js/tablefilter.js"></script>
+    <script language="JavaScript">
+    function confirmDelete() 
+    {
+        if(!confirm("<fmt:message key='confirm.delete'/>"))
+	{
+            return false;
+	}
+	else
+	{
+            return true;
+	}
+    }
+    </script>
+
+    <title><c:out value="${usernavig.siteTitle}"/></title>
+  </head>
+
+
+
+  <body onLoad="putFocus(0);">
+
+
+<!-- ##### Main Copy ##### -->
+<div id="main-copy">
+<h1 style="text-align:center"><c:out value="${usernavig.header}" escapeXml="false"/></h1>
+
+<p><input type="button" value="<fmt:message key='print'/>" onClick="window.print()"></p>
+
+
+<%-- MESSAGING PART --%>
+<%@ include file="../../admin/part2.jspf" %>

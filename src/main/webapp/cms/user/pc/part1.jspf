@@ -1,0 +1,89 @@
+<%-- urlbase must be in that page, otherwise it does not work... --%>
+<c:set var="URLBASE" value="/cms/user/pc/modules" scope="page"/>
+<c:set var="PREFIX"  value="/openplatform/cms/user/pc/modules" scope="page"/>
+
+
+<c:if test="${usernavig.refreshPage}"/>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+  	<%--
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"/>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"/>
+    --%>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/openplatform/css/gila-screen.css" media="screen" title="Gila (screen)" />
+    <%-- <link rel="stylesheet" type="text/css" href="/openplatform/css/gila-print.css" media="print" title="Gila (screen)" /> --%>
+    <style type="text/css">@import url(/openplatform/cms/user/pc/cms.css);</style>
+    <style type="text/css">@import url(/openplatform/css/tablefilter.css);</style>
+    <style type="text/css">@import url(local.css);</style>
+    <style type="text/css"><c:out value="${usernavig.css}" escapeXml="false"/></style>
+    <link rel="SHORTCUT ICON" href="/openplatform/favicon.ico"/>
+    <script language="JavaScript" src="/openplatform/js/common.js" type="text/JavaScript"></script>
+    <script language="JavaScript" src="/openplatform/js/calendar/calendar1.js"></script>
+    <script language="JavaScript" src="/openplatform/js/sorttable.js"></script>
+    <script language="JavaScript" src="/openplatform/js/sortselect.js"></script>
+    <script language="JavaScript" src="/openplatform/js/tablefilter.js"></script>
+    <script language="JavaScript">
+    function confirmDelete() 
+    {
+        if(!confirm("<fmt:message key='confirm.delete'/>"))
+	{
+            return false;
+	}
+	else
+	{
+            return true;
+	}
+    }
+    </script>
+
+    <title><c:out value="${usernavig.siteTitle}"/></title>
+  </head>
+
+  <body onLoad="putFocus(0);"> 
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle">
+        <sr:img fileBaseId="${usernavig.logoId}" />
+        <a href="${PREFIX}/${usernavig.firstPageURL}" title="<c:out value='${usernavig.header}'/>"><c:out value="${usernavig.header}" escapeXml="false"/></a>
+      </h1>     
+
+      <div class="subHeader">
+        <span class="doNotDisplay">Navigation: </span>
+	    <c:forEach var="b" items="${usernavig.centerBlocks}">
+	        <jsp:include page="${URLBASE}/${b.jsp}"/>
+	    </c:forEach>
+      </div>
+    </div>
+
+
+<table width="100%" cellspacing="5px">
+<tr>
+	<c:set var="leftBlocks" value="${usernavig.leftBlocks}"/>
+	<c:if test="${not empty leftBlocks}">
+		<td valign="top" class="leftSideBar">
+	      	<c:forEach var="b" items="${leftBlocks}">
+	          	<p class="sideBarTitle"><c:out value="${b.title}"/></p>
+			  	<jsp:include page="${URLBASE}/${b.jsp}"/>
+	      	</c:forEach>
+		</td>
+	</c:if>
+
+
+
+
+<!-- ##### Main Copy ##### -->
+<td valign="top" align="left">
+<div id="main-copy">
+
+
+<%-- MESSAGING PART --%>
+<%@ include file="../../admin/part2.jspf" %>

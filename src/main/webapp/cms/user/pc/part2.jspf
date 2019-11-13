@@ -1,0 +1,25 @@
+</div> <!-- MAIN COPY CLOSE -->
+</td>
+
+		<c:set var="rightBlocks" value="${usernavig.rightBlocks}"/>
+		<c:if test="${not empty rightBlocks}">
+			<td valign="top" align="right" class="rightSideBar">
+		        <c:forEach var="b" items="${rightBlocks}">
+				    <p class="sideBarTitle"><c:out value="${b.title}"/></p>
+				    <jsp:include page="${URLBASE}/${b.jsp}"/>
+				</c:forEach>
+      		</td>
+      	</c:if>
+</tr>
+
+</table>
+
+
+
+    <!-- ##### Footer ##### -->
+    <div id="footer">
+      <div><c:out value="${usernavig.footer}" escapeXml="false"/></div>
+    </div>
+
+  </body>
+</html>

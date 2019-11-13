@@ -1,0 +1,3 @@
+<c:set target="${usernavig}" property="currentModuleId" value="${null}"/>
+
+<c:if test="${not usersession.loginOpened}"><c:redirect url="/cms/admin/license.jsp"/></c:if>

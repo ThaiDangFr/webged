@@ -1,0 +1,5 @@
+<c:set var="MODULEID" scope="page" value="11"/>
+<jsp:setProperty name="usernavig" property="currentModuleId" value="${MODULEID}"/>
+<jsp:useBean id="usnmpgraph" scope="session" class="dang.websnmp.UserSnmpGraph"/>
+<jsp:useBean id="usnmpaction" scope="session" class="dang.websnmp.UserSnmpAction"/>
+<jsp:useBean id="usnmpalert" scope="session" class="dang.websnmp.UserSnmpAlert"/>

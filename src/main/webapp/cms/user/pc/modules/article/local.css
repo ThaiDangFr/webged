@@ -1,0 +1,156 @@
+#header h1 {
+/* see http://www.3dtextmaker.com/cgi-bin/3dtext.pl (annifont) */
+background: transparent url(images/article.gif) right center no-repeat;
+}
+
+#header h1 span {
+display:none;
+}
+
+div.article {
+border:none;
+margin-bottom:1.6em;
+margin-top:1.6em;
+}
+
+div.header {
+padding:0.64em;
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+border-top:1px solid #eee;
+border-left:1px solid #eee;
+border-right:1px solid #eee;
+background-color: #eee;
+}
+
+div.header h2 {
+border:none;
+padding:0;
+margin:0;
+font-size:140%;
+}
+
+div.header span.category {
+color:#1c5a7e;
+}
+
+div.header span.title {
+color:#666;
+}
+
+div.header p {
+margin:0;
+font-style:italic;
+color:#777;
+font-size:90%;
+}
+
+div.content {
+margin:0;
+padding:0.64em;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+border-left:1px solid #ccc;
+border-bottom:1px solid #ccc;
+border-right:1px solid #ccc;
+min-height: 4.8em;
+}
+
+div.content img {
+float:left;
+margin-right:0.9em;
+margin-bottom:0;
+}
+
+div.content ul
+{
+	padding:0;
+	margin:0;
+	margin-top:60px;
+	margin-left:20px;
+}
+
+div.content li {
+list-style:square;
+}
+
+div.content li.link {
+color:#1c5a7e;
+}
+
+div.content li.file {
+color:#1c7e35;
+}
+
+div.articledetail {
+margin:0;
+padding:0.64em;
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+border: 1px solid #ccc;
+background-color:#ddd;
+}
+
+#comment {
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+margin-top:1.6em;
+background-color:#ccc;
+padding: 0.64em;
+}
+
+
+#articlecom {
+padding: 0.32em;
+background-color:#eee;
+margin-bottom:0.8em;
+margin-top:0.8em;
+}
+
+#articlecom p {
+margin:0;
+font-size:90%;
+}
+
+#articlecom p span.submitby {
+margin:0;
+font-style:italic;
+color:#777;
+font-size:100%;
+}
+
+#articlecom h4 {
+margin:0;
+padding:0;
+color: #666;
+}
+
+table#articlemod {
+padding:0.64em;
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+border:1px solid #999;
+}
+
+table#articlemod tr:first-child{
+background-color:#999;
+}
+
+table#articlemod td {
+padding: 0.4em;
+}
+
+table#articlemod th {
+padding: 0.4em;
+}
+
+
+div.sideBarText select {
+width: 9em;
+}

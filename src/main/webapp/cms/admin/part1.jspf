@@ -1,0 +1,83 @@
+<c:if test="${not adminsession.connected}">
+<c:redirect url="/cms/user/"/>
+</c:if>
+
+<c:set var="PREFIX"  value="/openplatform/cms/admin" scope="page"/>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-AU">
+  <head>
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE"/>
+    <meta http-equiv="PRAGMA" content="NO-CACHE"/>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/openplatform/css/gila-screen.css" media="screen" title="Gila (screen)" />      
+    <style type="text/css">@import url(/openplatform/cms/admin/cms.css);</style>
+    <style type="text/css">@import url(local.css);</style>
+    <link rel="SHORTCUT ICON" href="/openplatform/favicon.ico"/>
+  
+
+    <script language="JavaScript" src="/openplatform/js/common.js" type="text/JavaScript"></script>
+    <script language="JavaScript" src="/openplatform/js/calendar/calendar1.js"></script>
+    <script language="JavaScript" src="/openplatform/js/sorttable.js"></script>
+    <script language="JavaScript" src="/openplatform/js/sortselect.js"></script>
+
+    <script language="JavaScript">
+    function confirmDelete() 
+    {
+        if(!confirm("<fmt:message key='confirm.delete'/>"))
+	{
+            return false;
+	}
+	else
+	{
+            return true;
+	}
+    }
+    </script>
+
+	<title><c:out value="${usernavig.siteTitle}"/></title>
+  </head>
+
+  <body>
+    <!-- For non-visual user agents: -->
+      <div id="top"><a href="#main-copy" class="doNotDisplay doNotPrint">Skip to main content.</a></div>
+
+    <!-- ##### Header ##### -->
+
+    <div id="header">
+      <h1 class="headerTitle"><a href="${PREFIX}/index.jsp">WEB <span>ADMINISTRATION</span></a></h1>
+    </div>
+
+
+<table width="100%" cellspacing="5px">
+<tr>
+		<td valign="top" class="leftSideBar">
+			<%-- <div class="leftSideBar"> --%>
+			<p class="sideBarTitle">Menu</p>
+		        <ul>
+		            <li><a href="${PREFIX}/modules.jsp">Modules</a></li>
+		            <li><a href="${PREFIX}/blocks.jsp"><fmt:message key='blocks'/></a></li>
+		            <li><a href="${PREFIX}/preferences.jsp"><fmt:message key='preferences'/></a></li>
+			    
+			    <hr/>            
+			    <li><a href="${PREFIX}/user.jsp"><fmt:message key='users'/></a></li>
+			    <li><a href="${PREFIX}/groups.jsp"><fmt:message key='groups'/></a></li>
+			    <li><a href="${PREFIX}/usergroups.jsp"><fmt:message key='usergroups'/></a></li>
+		
+			    <hr/>
+			    <li><a href="${PREFIX}/imgdim.jsp"><fmt:message key='images'/></a></li>
+			    <li><a href="${PREFIX}/terminal.jsp"><fmt:message key='terminals'/></a></li>
+			    <li><a href="${PREFIX}/mimetypes.jsp"><fmt:message key='mimetypes'/></a></li>
+			    <li><a href="${PREFIX}/license.jsp"><fmt:message key='license'/></a></li>
+			    <li><a href="${PREFIX}/stats.jsp"><fmt:message key='statistics'/></a></li>
+		
+			    <hr/>
+			    <li><a href="${PREFIX}/trace.jsp">Journal</a></li>
+		        </ul>
+		    <%-- </div> --%>
+		</td>
+	
+		<td valign="top" align="left">
+   

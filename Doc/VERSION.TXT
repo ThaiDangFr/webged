@@ -1,0 +1,77 @@
+
+war 3.2.1 à tagguer
+Procédure de migration :
+Undeploy le war openplatform
+Déplacer tous les répertoires .openplatform sous C:/ (répondre Oui pour l'écrasement)
+(notamment vérifier C:\Documents and Settings\<nom_dutilisateur>\.openplatform)
+Renommer C:\.openplatform en C:\WEBGED (attention à la casse et à l'orthographe)
+Déploy le nouveau openplatform.war (3.2.1)
+
+Nouveauté : 
+prise en charge de la conversion .txt en .pdf
+compatibilité avec les nouvelles versions d'openoffice
+résolution du bug avec les dossiers .openplatform
+le nom du dossier contenant les données binaires (C:\WEBGED) est configurable
+
+4875
+sql + war, début de todolist pour la ged + sql en properties
+
+4871
+3.1.9 + sql livré à bsmat
+
+4859
+3.1.9 et war
+
+4852
+3.1.7 correction display
+
+4824
+3.1.6 + war
+
+4823
+3.1.5 + war
+
+4820
+3.1.4 et génération du war
+
+4797
+3.1
+
+4785
+3.0.8
+
+4778
+3.0.7
+
+4770
+3.0.6 gestion différente en base de donnée
+
+4751
+.war 3.0.4
+
+4750
+3.0.4 : cryptage d'url pour le ged et article (non complet), en test actuellement
+
+4737
+3.0.3 : retrait de hibernate dans le code, tout est a tester 
+
+4729
+Passage en francais, remaniement de JSPMessage et création de CmsLanguage
+
+4708
+openplatform.war v3.0.1
+
+4707
+Correction bug GedFiles::isConvert2pdf
+
+4693
+Upgrade jooconverter 2.1rc2
+correction de bug (format word non converti en pdf)
+
+4690
+Upgrade des jar du package xalan vers la 2.7
+xalan-2.7.jar xercesImpl-2.7.jar xml-apis-2.7.jar serializer-2.7.jar xsltc-2.7.jar
+
+4689
+Fin des développements spécifiques pour BSMAT (non testé) : affichage des états, conversion vers PDF
+Hibernate toujours présent

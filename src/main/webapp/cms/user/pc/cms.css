@@ -1,0 +1,311 @@
+/*
+#side-bar .sideBarText {
+margin:0;
+padding:0;
+padding:0.4em;
+}
+*/
+
+tr.textinput input {
+border: 1px solid #aaa;
+width:22.5em;
+}
+
+tr.textinput input:focus {
+border: 1px dotted #000;
+}
+
+#statusmessage {
+-moz-border-radius-topleft: 12px;
+-moz-border-radius-topright: 12px;
+-moz-border-radius-bottomleft: 12px;
+-moz-border-radius-bottomright: 12px;
+background-color:#fff;
+font-family: verdana, helvetica, arial, sans-serif;
+font-size:smaller;
+float:center;
+display:block;
+top:1em;
+left:40%;
+width:20em;
+position:absolute;
+padding:1em;
+text-align:center;
+filter : Alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+}
+
+/*
+div.rightSideBar a {
+text-decoration:none;
+}
+
+div.rightSideBar a:hover {
+color:#434343;
+}
+*/
+
+a.logout {
+font-size:smaller;
+padding:0.15em;
+text-decoration:none;
+color: #ba0707;
+border-top:1px solid #ba0707;
+}
+
+.bgwarning
+{
+background-color: #fffdc0;
+}
+.bgerror
+{
+background-color: #ffc0c0;
+}
+.info
+{
+color: green;
+font-weight : bold;
+text-align : center;
+}
+.warning
+{
+color: yellow;
+font-weight : bold;
+text-align : center;
+}
+.error
+{
+color: red;
+font-weight : bold;
+text-align : center;
+}
+.bglightgrey
+{
+background-color:#eee;
+}
+.bgyellow
+{
+background-color:#fff7b6;
+}
+
+/*
+.leftSideBar
+{
+background-color:rgb(243,242,235);
+border-right: 1px solid rgb(216,210,195);
+border-bottom: 1px solid rgb(216,210,195);
+}
+
+.rightSideBar
+{
+background-color:rgb(243,242,235);
+}
+*/
+
+
+body
+{
+background-color: white;
+}
+
+img {
+border:none;
+}
+
+/*
+input,textarea {
+text-decoration: none; 
+color : black;
+border : 1px solid #ccc;
+}
+input:hover{
+
+background-color: #fff;
+border : 1px outset #aaa;
+}
+
+input:focus, textarea:focus {
+border: 1px dotted #000;
+}
+*/
+
+pre
+{
+color: black;
+font-family: verdana, helvetica, arial, sans-serif;
+margin: 0;
+padding: 0;
+white-space: -moz-pre-wrap;  /* Mozilla, supported since 1999 */
+white-space: -pre-wrap;      /* Opera 4 - 6 */
+white-space: -o-pre-wrap;    /* Opera 7 */
+white-space: pre-wrap;       /* CSS3 - Text module (Candidate Recommendation)
+                                 http://www.w3.org/TR/css3-text/#white-space */
+word-wrap: break-word;       /* IE 5.5+ */
+}
+
+#main-copy {
+border:none;
+/*min-height:45em;*/
+}
+
+#header {
+background: transparent url(header.jpg) left top no-repeat;
+border-bottom:2em solid #000;
+height:80px; /* needed PX */
+}
+
+
+#header div.subHeader span {
+background-color: #FFFFFF;
+color : black;
+padding: 0 1ex;
+}
+
+
+#header h1 a {
+color:#fff;
+}
+
+#header h1 span {
+color:black;
+}
+
+#header h1.headerTitle {
+padding-top:20px; /* needed PX */
+padding-bottom:15px; /* needed PX */
+}
+
+#header input.text {
+height:13px;
+}
+
+#header div.subHeader {
+position:absolute;
+top:80px;
+left:24em;
+}
+
+#header div.subHeader ul {
+list-style-type: none;
+padding:0;
+margin:0;
+}
+
+
+#header div.subHeader ul li {
+float: left;
+padding:0;
+margin:0;
+padding-left:0.8em;
+padding-top:0.3em;
+}
+
+
+#header form {
+padding:0;
+margin:0;
+}
+
+#main-copy a.noline{
+text-decoration : none;
+font-weight : bold;
+}
+
+#main-copy textarea{
+width : 80%;
+height : 100px;
+}
+
+#main-copy table {
+background-color:transparent;
+border: 1px solid #ccc;
+width:100%;
+/*width:98%;*/
+margin-bottom:1.5em;
+border-collapse: collapse;
+}
+
+#main-copy table th {
+background-color: transparent;
+text-align:left;
+text-transform:uppercase;
+}
+
+#main-copy table.horizontal th {
+font-size:0.85em;
+text-align:right;
+width:30%;
+text-decoration:underline;
+background-color: #ebeadb;
+padding-right:1em;
+}
+
+#main-copy table.horizontal td {
+	padding-left: 1em;
+}
+
+
+#main-copy table.vertical th {
+font-size:0.85em;
+text-align:center;
+text-decoration:underline;
+background-color:#eee;
+border: 1px solid #aaa;
+padding: 2px;
+}
+
+#main-copy table.vertical td {
+	text-align:center;
+	border: 1px solid #aaa;
+	padding:2px;
+}
+
+#main-copy table caption {
+margin-top : 0.8em;
+border-bottom : 5px solid rgb(216,210,195);
+font-weight : bold;
+text-transform:uppercase;
+text-align:center;
+width:20%;
+color: #666;
+font-style:italic;
+
+	/*
+text-align:center;
+margin-right:79%;
+border-bottom: 5px solid rgb(216,210,195);
+color: #666;
+font-style:italic;
+font-weight:bold;
+text-transform:uppercase;
+	*/
+}
+
+#main-copy h1 {
+padding-bottom:1.2em;
+color: #666;
+}
+
+#main-copy a {
+color:#666;
+}
+
+/*
+#side-bar div.rightSideBar ul {
+list-style-type:none;
+padding:0;
+margin:0;
+}
+
+#side-bar div.rightSideBar ul li {
+padding:0.15em;
+}
+
+#side-bar div.leftSideBar  ul li {
+padding:0;
+margin:0;
+padding:0.15em;
+}
+*/

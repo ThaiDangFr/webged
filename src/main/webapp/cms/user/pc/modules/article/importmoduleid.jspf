@@ -1,0 +1,2 @@
+<c:set var="MODULEID" scope="page" value="3"/>
+<jsp:setProperty name="usernavig" property="currentModuleId" value="${MODULEID}"/>

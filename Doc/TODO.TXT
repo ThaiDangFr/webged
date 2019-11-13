@@ -1,0 +1,496 @@
+A FAIRE :
+
+- sortir le restant de sql specific dans le fichier de properties ;
+RepositoryFSDES
+Engine
+
+extras :
+- script mysql : ne stop pas sur erreur
+- ImageConverter : convertir du input en input (exemple : FormatConverter)
+- changer le système de workflow
+- déplacer les répertoires
+- tester sans les cookies
+
+
+
+Amélioration (par ordre d'importance) :
+
+> workflow : quand le workflow a été refusé et que le message de refus revient à
+l'auteur, le fichier devrait être en pièce jointe (sinon comment la personne fait
+pour modifier le fichier suivant les indications des valideurs si elle ne l'a
+plus) Ce point était supposé être comme ça au vu des cahiers des charges.
+
+> workflow bis : le message comme quoi on a une étape de workflow à effectuer ne
+précise pas le temps que l'on a pour le faire or il devrait logiquement le faire.
+
+> Revue presse : il n'y a plus de message quand on envoie un article, ça fait très
+bizarre, on se demande si l'article a bien été envoyer en modération.
+
+
+> Modification des droits possibles "uniquement sur le répertoire" (comme c'est
+actuellement) ou "sur le répertoire et sur les sous-répertoires" (cf. dossier
+lambersart)
+
+
+- Si la fenêtre du navigateur est plus petite que 17 pouces :
+	Sur firefox : le bock de droite vient sur le journal des évènements.
+	Sur IE : le journal des évènements descend en bas de la page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+========================================================================================================
+FAIT :
+
+26/10
+- Utiliser le nouveau SQL UserSearchTemplate (multicritere template)
+- résolution du bug (des résultats s'affichent meme si le full texte ne trouve rien)
+
+22/10
+- bug sur la recherche sur masque de saisie
+
+19/10
+- maj de jodconverter en 2.2
+- bug avec le .openplatform : le fichier de donnée windows se trouve sous C:/WEBGED maintenant
+
+req:
+java >=1.4
+openoffice >=2.0.3  ou staroffice8
+servlet container 2.3 ou tomcat >=4.1
+
+dépendance:
+commons-cli-1.0
+commons-io-1.3.1
+jodconverter-2.2.0
+jodconverter-cli-2.2.0
+juh-2.2.0
+jurt-2.2.0
+ridl-2.2.0
+slf4j-api-1.4.0
+slf4j-jdk14-1.4.0
+unoil-2.2.0
+xstream-1.2.2
+
+- OsName.java (voir http://lopica.sourceforge.net/os.html)
+
+23/4
+- problème avec les blocs
+
+19/4
+- bug sur todo list article
+- livraison war 3.2
+
+16/4
+bug todolist :
+- ExpiredGedFilesAllUsers (=> la notification journalière)
+- notification journalière sur les fichiers expirés
+- usergedstate.jsp
+
+specific SQL
+- CountExpiredGedFiles
+- ExpiredGedFiles
+- WorkflowGedFiles
+- CountWorkflowGedFiles
+
+todolist sur article :
+liste de "article" dont le user est modérateur("articlemoderator") et article.validate=0
+ps : l'info Article.moderatorId est là que pour info
+
+SELECT COUNT(a.id) AS COUNT
+FROM Article a
+INNER JOIN ArticleModerator am ON am.categoryId=a.categoryId
+INNER JOIN `User` u ON u.userId=am.userId
+WHERE a.validate=0 AND a.moderatorId=?
+
+=> ArticleApprove.getCountArticleToModerate()
+
+
+13/4
+- GedFiles isExpired à changer 
+
+11/4
+- pouvoir utiliser db.loadSQL(sb) avec des ?
+- UserTodo et UserGedState et WDaemon : passer le SQL en fichier de properties
+- Todo list
+
+5/4
+- augmentation de la longueur des varchar
+
+16/3
+- remplacer le mot "colonne" dans usergedstate 
+- redirection automatique vers la bonne page après authent, rajout de js dans : 
+usermenu.jsp usermenuaction.jsp
+
+15/3
+- le .0 à la fin de la date dans articlemoderate.jsp?articleId= (=5 par
+exemple)
+- le .0 à la fin de la date d'expiration dans usergedstate.jsp
+- problème de filtre dans usergedstate.jsp avec les colonnes qui
+comprennent des dates.
+exemples : si je filtre "date" avec "14/03/2007" ou "14/03" il ne me
+trouve pas la réponse, il faut que je filtre avec "2007-03-14" ou "07-03"
+ou "03-14"...
+
+14/3
+- Dans les états pour filtrer par le statut du workflow.
+si je tape "envoyé" il ne trouve pas de résultat, alors que si je tape
+"sent" (le mot anglais) il trouve le résultat. le problème c'est que là on
+est en français.
+
+13/3
+- problème d'affichage sous firefox est uniquement dans l'administration. A chaque fois que tu cliques sur un lien ou un bouton
+  dans l'admin, l'affichage central bouge.
+- sous IE : problème d'affichage dans article
+- à passer en français :
+	"Browse to homepage" quand passe souris sur le titre.
+	le bouton "attach" quand on rédige un message.(dans inboxcompose.jsp)
+	accent circonflexe à rajouter dans "boîtes aux lettres"
+
+8/3
+- mettre des tableaux à la place du style en cours
+	le bug est reproductible sur IE 6 avec la petite fenetre des favoris a gauche
+
+2007
+Happy new year !
+
+5/12
+- l'anglais dans usergedstate
+- le .0 dans les dates dans les états
+- limite à 100 pour les états
+
+1/12
+- compatibilité css pour IE7
+
+
+29/11
+- moteur de recherche : le refaire avec un select, seulement sur la derniere version 
+
+s'inspirer de usergedstate.java
+
+SELECT *, gf.id gedfilesid
+FROM GedFiles gf
+INNER JOIN (select * from GedFilesVersion gfv order by gfv.version desc) gfv ON gf.id=gfv.fileId
+INNER JOIN GedDirectory gd ON gf.directoryId=gd.id
+LEFT JOIN GedWorkflowProc gwp ON gwp.fileId=gf.id
+INNER JOIN `User` u ON u.userId=gfv.authorId
+LEFT JOIN GedWorkflowStep gws ON gwp.workflowStepId=gws.id
+LEFT JOIN GedFilesDescr gfd ON gfd.fileId=gf.id
+LEFT JOIN GedDirectoryRights gdr ON gdr.directoryId=gd.id and gdr.readRight=1
+INNER JOIN UserGroups ug ON ug.groupId=gdr.groupId and ug.userId=2
+LEFT JOIN GedTemplateItem gti ON gti.templateId=gd.templateId
+group by gf.id
+
+
+insérer simplement les clauses WHERE juste avant group by
+- workflow : le message comme quoi on a une étape de workflow à effectuer ne précise pas le temps que l'on a pour le faire
+or il devrait logiquement le faire
+
+
+28/11
+- moteur de recherche : pb d'aff qd il y a plusieurs répertoires (les rép ne sont pas classés non plus)
+
+14/11
+- tableaux triables
+- réception des messages sur email : les liens ne sont pas actifs
+MailSender : ligne 130 et 145
+
+9/11
+- taglib de lecture de media
+<sr:media filebaseid= />
+image => imagette avec agrandissement : ok
+video => lecteur vid : non fait
+son => lecteur son : ok
+texte => xhtml : ok
+
+http://kutttpech.sourceforge.net/
+http://www.javazoom.net/javalayer/javalayer.html
+http://www.alphaworks.ibm.com/tech/tk4mpeg4?open&S_TACT=105AGX59&S_CMP=GR
+
+
+3/11
+- pdf to image : créer les caches pdf
+- bug : effacer répertoire
+
+pour chaque répertoire :
+- Stockage et télèchargement (droit en écriture et en lecture) en format
+original
+ou
+- Stockage et téléchargement (droit en écriture) en format original +
+téléchargement en pdf (droit en lecture)
+OU
+- stockage en pdf (et donc téléchargement aussi)
+
+
+2/11
+- les doc office sont converties en image (et non en html)
+
+31/10
+- transfo pdf vers image de mauvaise qualité avec pdfbox : remplacé par jpedal
+
+27/10
+- visu de pdf
+
+26/10
+webged : image mal redimmenstionné (étiré)
+problème webged : annulation téléchargement,  broken pipe
+
+
+25/10
+<sr:img title= filebaseid= extension= param= />
+virer download.jsp au profit de dl.jsp
+
+24/10
+- filebase : enlever la colonne data
+- filebase : rajouter la taille
+- Table ConversionCache:
+	id, extension, param, orifile(filebaseid), cachefile(filebaseid)
+- downloadconvert : getcache() à faire
+- faire un bean de download avec API de conversion (inter image et txt2pdf)
+fileBaseId=
+convert= true/false
+disposition= inline/attachment
+extension= xhtml,jpg,etc.
+param= 800x600, etc.
+virer geddownload.jsp geddownload.java
+- sécurité : remettre le download.jsp comme avant pour seeversion et seefile en utilisant la taglib sr:a pour sécuriser
+- <sr:a 	href= target= filebaseid= extension= param= />
+
+
+20/10
+- corriger le bug d'enregistrement des répertoires : mettre à jour le nom de tous les sous répertoires
+
+19/10
+- recentrage vignette
+
+18/10
+- gedfiles sans au moins un gedfilesversion sont éliminés dans le cas de RepositoryFSDES
+- moteur de recherche ged lent à afficher ??
+	DBGedDirectory : ajouter path, GedDirectory : changer getPathName, store : remplir path, GedFiles : changer getPathName
+	UserSearchTemplate : getDirectoryOptions
+- messages envoyés automatiquement : passer en .navig et QueryCrypt
+- vignette pour les images
+- javascript d'affichage des images
+
+
+17/10
+- repository sur filesystem
+- querycrypt : mettre une key fixe
+- download : problème car avec mysql le getinputstream retourne un bytearrayinputstream donc le chargement mémoire est vite saturé
+
+
+16/10
+- Repository : système de cache
+- mesurer l'impact des .navig
+
+12/10
+- sécuriser les liens avec sr:a
+
+10/10
+- sécurité des liens
+remplacer download.jsp par geddownload.jsp dans seefile.jsp et seeversion.jsp
+faire du ménage dans download.jsp et ImageDownloadBean
+
+9/10
+- ldap : modifier usersession pour intégrer ldap
+- moteur de recherche article ne marche plus
+
+6/10
+- reindex all fait planter
+- connecteur ldap
+http://developer.novell.com/documentation/samplecode/ldapjdbc_sample/index.htm
+cmspreference : ldapAuthent (0/1), ldapDN (avec un string [LOGIN]), ldapServer 
+
+3/10
+- dbean : load : ne pas rajouter ds le filtre si null 
+- repository : enlever le hibernate
+- database : pouvoir enregistrer qd paramvalue est autre chose que du string
+http://ricky81.developpez.com/tutoriel/java/jdbc/blob/
+- remplacer les bool dans les .sql 
+- résoudre erreur
+- tester le repository
+- retirer hibernate (et ses dépendances)
+- anglais : Hi, the file Root/ytuc5/cap18_analysedétaillée-dos.doc has been revised by admin
+
+2/10
+- mettre fichier de config pour la base de donnée
+- intégrer C3P0
+
+29/09
+- prob avec notifcation email (host smtp changé)
+- prob avec les \n dans notificator.java(l.272) ou out.java(l.107) (appelé par Wdaemon.java)
+- prob avec user agent ( remplacé (.*) par [\\s\\S]*)
+- retrait de jakarta oro
+
+à traduire :
+- les messages du système concernant le module revue de presse (article à valider) : ok
+- la liste déroulante : validate/not validate lorsque l'on doit valider un article : ok
+- dans l'administration, on clique sur enregistrer pour des modification des paramètres avancés du module "revue de presse" : ok
+- Dans l'administration, dans blocs : la phrase qui s'affiche automatiquement quand on enregistre des modifications d'un blocs édité. : ok
+- champ priorité dans les messages : ok
+- la page 'licence" dans l'administration : ok
+
+
+27/09
+- franciser le reste
+	créer CmsLanguage (bundle etc.), remplacer les I18N, remplacer les mots anglais : ok
+	virer l'ancienne facon pr I18N : part2.jspf, openplatform.session.JSPMessage : ok
+	common_fr et common_en : virer les {0} : ok
+
+26/09
+- rajouter un champ cmsLang dans cmspreference (enum: en fr) => ok
+header.jspf, locale a modifier => ok
+UserNavig.java, ajouter un getCmsLang => ok
+adminpref.java, rajouter les get/set cmslocale => ok
+
+22/09
+- enregistrement fichier qui se passe mal, y a une sorte de fichier invisible
+- Bug avec fichier 63292WDF.txt
+- dos2unix en piped
+- FormatConverter.java :mettre des pipedinputstream comme dans zlibutils.java pour la méthode convert
+
+14/09
+pour les champs du masques de saisie, il faudrait qu'on sache à quelque
+masque ils correspondent (pourquoi ne pas faire comme dans le moteur de
+recherche (exemple : masque de saisie 1/étape 1)
+
+13/09
+date d'expiration dans les états : je crois qu'il y a un problème, ça
+ne ressemble pas à une date (exemple : j'ai 1152970123000 d'affiché)
+
+performance sur "afficher les états"
+
+
+12/09 :
+- ajout d'états :
+	regénérer DBean et mapping hibernate (nouveau champ next) (table GedState) => OK
+	implémenter admingedstate.java => ok
+	implémenter admin : gedstate.jsp => ok
+	implémenter usergedstate.java => ok
+	implémenter usergedstate.jsp : ok
+
+SELECT *, gf.id gedfilesid
+FROM GedFiles gf
+INNER JOIN (select * from GedFilesVersion gfv order by gfv.version desc) gfv ON gf.id=gfv.fileId
+INNER JOIN GedDirectory gd ON gf.directoryId=gd.id
+LEFT JOIN GedWorkflowProc gwp ON gwp.fileId=gf.id
+INNER JOIN `User` u ON u.userId=gfv.authorId
+LEFT JOIN GedWorkflowStep gws ON gwp.workflowStepId=gws.id
+LEFT JOIN GedFilesDescr gfd ON gfd.fileId=gf.id
+LEFT JOIN GedDirectoryRights gdr ON gdr.directoryId=gd.id and gdr.readRight=1
+INNER JOIN UserGroups ug ON ug.groupId=gdr.groupId and ug.userId=2
+group by gf.id
+
+
+29/6 :
+trou de sécurité : browser.jsp?action=seeFile&fileId=
+
+28/6 :
+reindex all : desindexer toutes les versions précédentes
+pouvoir sauvegarder sans upload
+utilisateur en readonly ne peuvent pas voir les anciennes versions
+
+27/6 :
+l'indexation se fait que sur la dernière version d'un fichier
+
+23/6 :
+geddirectory : pour le groupe admin, montre tous les groupes lors d'un ajout de répertoire
+
+22/6 :
+licenceId : FindMac est maintenant sous cache pour éviter les problèmes de out of memory
+valeur par défaut des groupes quand on rajoute des répertoires (hérités)
+protéger les répertoires : exemple : openplatform/cms/user/pc/modules/ged/browser.jsp?action=browse&directoryId=24
+problème avec le module article et les images qd on n'est pas authent
+dans la liste des groupes, lister seulement les groupes ou je suis présent
+
+21/6 :
+bug avec zlibutils (fichier > 8Mega)
+fuite mémoire : respository, zlibutils, uploadfile
+optimization mémoire (utilisation de inputstream)
+
+20/6 :
+DBFileBase : enlever champ data car c'est un blob
+prob moteur de rech webged : user.home pr le stockage .openplatform, et mauvaise indexation
+
+
+16/6/06 :
+mise à jour des libs itext, poi, lucene, pdfbox,jai
+
+
+15/6/06 :
+- bug : adaptation image
+- mettre un paramètre de sécurité (une clef random) : protéger download.jsp : ceux qui ont ouvert une session peuvent mettre des fileid au hasard et ouvrir des fichiers
+	création d'un champ security dans FileBase contenant un champ random de chiffre et lettre en majuscule
+- bug : problème avec fichier ods : il manque la méthode extract(String, byte[]) dans ZipUtils
+
+
+14/6/06 : 
+- remplacement de la librarie pour zipper par une lib zlib + rapide
+
+
+avant :
+- Workflow : Quand workflow retourne à l'auteur car le délai de validation a été
+dépassé, l'auteur voit comme message "workflow ended with statut disaprove" or ce
+n'est pas vrai, le workflow est end car le délai est dépassé c'est totalement
+différent.
+
+- pbm notification d'un fichier à voir qui se situe dans la corbeille (car une
+personne l'a mis dans trash)
+quand clique sur lien dans messagerie, on tombe sur fichier (problème 1 : on peut le
+télécharger) puis si clique sur Retour on tombe sur la corbeille (ok no problème)
+puis si clique de nouveau sur Retour on tombe sur le répertoire trash (problème 2 :
+les liens vers les fichiers sont actifs)
+
+- pbm fichier à réviser : on ne peut pas réviser un fichier à réviser qui se trouve
+dans un répertoire sans date d'expiration.
+Exemple : on édite un répertoire, on active l'expiration, puis on ajoute un fichier
+puis on désactive l'expiration (on imagine qu'un jour le client n'a plus besoin
+d'expiration pour ce répertoire). Quand le fichier arrive à expiration (donc dans un
+répertoire où il n'y a plus de date d'expir), il est impossible de le réviser, il
+reste toujours à réviser.
+
+- Pbm modif fichier sans "charger"
+Je veux modifier un fichier, je fais parcourir mais j'oublie de charger, puis
+j'enregistre. Rien n'indique que j'ai oublié de le charger, tout se passe comme si
+je l'avais chargé.
+
+- pbm révision fichier verroullier.
+un groupe reçoit un fichier à réviser. une personne X décide donc de modifier ce
+fichier à réviser, elle le verrouille le temps de le modifier (= c'est le principe
+du verrouillage). Et bien une personne Y peut réviser ce fichier alors que X l'a
+verrouillé (car y dispose d'un lien dans sa boite qui est actif)
+
+
+- Pbm modification d'un user dans l'administration :
+si on modifie un user (par exemple son pass) qui ne se situait pas dans le "default
+group", alors après la modif, il appartient au "default group" sans qu'on l'ait
+demandé.
+
+- Dans l'administration, supprimer le menu "L'utilisateur peut créer un compte", car
+d'une part ça merde, d'autre part je n'ai jamais vu cette demande sur aucun cahier
+des charges.
+
+- "Produire les informations pour le débogage" sur False : si redémarre le serveur
+alors ça passe automatiquement sur True sans qu'on est rien demandé.
+
+- Dans l'administration : tout en bas changer en DANGCONSULTING (ou faire en
+sorte que se soit automatique du fait du menu Pied de page Copyright &copy; <a
+href="http://www.dangconsulting.fr">DANG CONSULTING</a>)
+
+- Workflow : Quand workflow retourne à l'auteur car le délai de validation a été
+dépassé, l'auteur voit comme message "workflow ended with statut disaprove" or ce
+n'est pas vrai, le workflow est end car le délai est dépassé c'est totalement
+différent.

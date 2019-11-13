@@ -1,0 +1,16 @@
+table#formula td {
+text-align:center;
+padding:5px;
+}
+
+table.mibhelp tr.title{
+font-weight:bold;
+}
+
+table.mibhelp td{
+padding: 0.8em;
+}
+
+table#mibtest td {
+padding: 0.2em;
+}

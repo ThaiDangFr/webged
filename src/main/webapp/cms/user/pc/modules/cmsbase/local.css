@@ -1,0 +1,89 @@
+#header h1 {
+/* see http://www.3dtextmaker.com/cgi-bin/3dtext.pl (annifont) */
+background: transparent url(images/webportal.gif) right center no-repeat;
+}
+
+#header h1 span {
+display:none;
+}
+
+#main-copy table {
+border:1px solid #5d93eb;
+}
+
+#main-copy table th {
+background-color: transparent;
+text-align:left;
+text-transform:uppercase;
+}
+
+#main-copy table.horizontal th {
+color:#fff;
+background-color:#598adb;
+}
+
+#main-copy table caption {
+border-color:#5d93eb;
+color: #aaa;
+}
+
+
+/*************************************/
+
+
+table#inbox {
+border:none;
+border:1px solid #5d93eb;
+font-size:90%;
+}
+
+table#inbox tr.title th{
+background-color:#598adb;
+color:#fff;
+}
+
+table#inbox td {
+padding-top:0.4em;
+padding-bottom:0.4em;
+}
+
+ul#bar {
+list-style-type: none;
+text-align: left;
+margin:0;
+padding:0;
+height:3.2em;
+}
+
+ul#bar li {
+float:left;
+padding-top:0.4em;
+padding-left:0.4em;
+padding-right:0.4em;
+margin:1px;
+border:1px solid #fff;
+}
+
+ul#bar li:hover {
+border:1px outset #aaa;
+}
+
+table#inbox a {
+text-decoration:underline;
+color: inherit;
+}
+
+table#inbox a.highpriority {
+color:red;
+}
+
+table#inbox tr.message:hover {
+background-color:#eee;
+}
+
+#message {
+border: 1px dotted #5d93eb;
+margin-top:0.8em;
+margin-bottom:1.6em;
+padding:0.4em;
+}

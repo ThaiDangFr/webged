@@ -1,0 +1,42 @@
+Configuration pour eclipse 3.3 europa jee :
+- installer le plugin subclipse
+- rajouter les 2 projets (Servers et WebGed)
+- open perspective j2ee, show view navigator
+- configurer eclipse pour
+	- serveur tomcat (preferences, server, installed runtimes, add)
+	- jdk
+- enlever les validators (preferences, validation, dont allow to overide, deselect all)
+- rebuild
+- servers (new server, available projects WebGed)
+
+
+Conversion txt to pdf :
+http://www.artofsolving.com/jooconverter
+http://www.artofsolving.com/opensource/jodconverter
+
+JOOCONVERTER 2.1RC2:
+commons-io-1.2
+commons-logging-1.1
+openoffice-...
+spring-beans-1.2.8
+spring-context-1.2.8
+spring-core-1.2.8
+xpp3-1.1.3_8
+xstream-1.1.3
+jooconverter-2.1rc2
+
+JODCONVERTER 2.2:
+commons-cli-1.0
+commons-io-1.3.1
+jodconverter-2.2.0
+jodconverter-cli-2.2.0
+juh-2.2.0
+jurt-2.2.0
+ridl-2.2.0
+slf4j-api-1.4.0
+slf4j-jdk14-1.4.0
+unoil-2.2.0
+xstream-1.2.2
+
+MYSQL DUMP
+./bin/mysqldump  --opt --user=root -p --max_allowed_packet=1024M webged > webged.sql

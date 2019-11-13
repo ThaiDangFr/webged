@@ -1,0 +1,42 @@
+<%@ taglib prefix="c" uri="/WEB-INF/tld/c.tld" %> 
+<%@ taglib prefix="fmt" uri="/WEB-INF/tld/fmt.tld" %>
+<%@ taglib prefix="res" uri="/WEB-INF/tld/taglibs-response.tld" %>
+<%@ taglib prefix="input" uri="/WEB-INF/tld/taglibs-input.tld" %>
+<%@ taglib prefix="fn" uri="/WEB-INF/tld/fn.tld" %>
+<%@ taglib prefix="sr" uri="/WEB-INF/tld/dangconsulting.tld" %>
+
+
+<jsp:useBean id="adminsession" scope="session" class="openplatform.session.AdminSession" />
+<jsp:useBean id="usersession" scope="session" class="openplatform.session.UserSession" />
+<jsp:useBean id="message" scope="session" class="openplatform.session.JSPMessage"/>
+<jsp:useBean id="usernavig" scope="session" class="dang.cms.UserNavig"/>
+
+
+<c:set var="PREFIX" scope="application" value="/openplatform/cms/user/pc/modules"/>
+<c:set var="FWPREFIX" scope="application" value="/cms/user/pc/modules"/>
+<c:set target="${usernavig}" property="userId" value="${usersession.userId}"/>
+
+
+<fmt:setLocale value="${usernavig.cmsLang}"/>
+<fmt:setBundle basename="common"/>
+<fmt:requestEncoding/>
+
+
+<%-- TERMINAL DETECTION --%>
+<c:if test="${not usersession.terminalDetected}">
+<jsp:setProperty name="adminsession" property="pageContext" value="${pageContext}"/>
+<jsp:setProperty name="usersession" property="pageContext" value="${pageContext}"/>
+<c:if test="${adminsession.detectTerminal}"/>
+<c:if test="${usersession.detectTerminal}"/>
+</c:if>
+
+<%-- JSP CONTROL --%>
+<jsp:useBean id="jspControl" class="dang.cmsbase.JspControl" scope="session"/>
+<%
+	if(!jspControl.isAuthorized(request))
+	{
+%>	
+		<jsp:forward page="/cms/user/pc/modules/cmsbase/noaccess.jsp"></jsp:forward>
+<%			
+	}
+%>

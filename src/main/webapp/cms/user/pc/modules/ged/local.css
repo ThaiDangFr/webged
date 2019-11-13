@@ -1,0 +1,365 @@
+.filebusy{
+color: #aaa;
+}
+
+#main-copy a.button 
+{
+	border: 1px solid #aaa;
+	padding:5px;
+	background-color:rgb(243,242,235);
+	text-decoration:none;
+	color:#666;
+}
+
+#main-copy a.button:hover
+{
+	border: 1px dotted #aaa;
+}
+
+#header h1 {
+/* see http://www.3dtextmaker.com/cgi-bin/3dtext.pl (annifont) */
+background: transparent url(images/webged.gif) right center no-repeat;
+}
+
+#header h1 span {
+display:none;
+}
+
+ul#step {
+list-style-type: none;
+padding-bottom:2em;
+border-bottom: 1px solid #aaa;
+margin:0;
+margin-top:2em;
+margin-bottom:2em;
+}
+
+
+ul#step li {
+float: left;
+margin: 0.25em 0.16em 0 0.16em;
+border: 1px solid #aaa;
+background-color: #ddd;
+}
+
+
+ul#step li.active {
+border-bottom: 1px solid #fff;
+background-color:#fff;
+font-weight:bold;
+font-style:italic;
+}
+
+
+ul#step li.inactive {
+color:#aaa;
+font-style:italic;
+}
+
+ul#step li span {
+font-size:90%;
+display:block;
+padding:0;
+padding-left:0.3em;
+padding-right:0.3em;
+padding-top:0.14em;
+}
+
+#genealogy
+{
+padding:0.4em;
+margin:0;
+margin-left:0.6em;
+font-size:80%;
+text-transform:uppercase;
+}
+
+#genealogy span {
+margin-left:0.75em;
+}
+
+#genealogy ul
+{
+padding:0;
+margin:0;
+list-style-type: none;
+text-align: left;
+}
+
+#genealogy a
+{
+text-decoration: none;
+color:#aaa;
+font-weight:normal;
+background-color:transparent;
+}
+
+#genealogy ul li
+{
+background: transparent url(images/list-off.gif) left center no-repeat;
+text-align: left;
+}
+
+#genealogy ul li:hover {
+background: transparent url(images/list-active.gif) left center no-repeat;
+}
+
+#genealogy ul li#active
+{
+background: transparent url(images/list-on.gif) left center no-repeat;
+color: black;
+}
+
+
+#directory {
+/*float:center;*/
+margin-top:1.5em;
+font-size:80%;
+font-weight:bold;
+}
+
+#directory ul {
+list-style-type: none;
+padding-bottom:2.7em;
+border-bottom: 1px solid #02436d; /* dark blue */
+margin: 0;
+padding-left:0;
+}
+
+#directory ul li {
+float: left;
+height:2.4em;
+margin:0.2em 0.2em 0 0;
+border: 1px solid #aaa;
+background-color: #ddd;
+border-bottom: #02436d; /* dark blue */
+}
+
+#directory ul li:hover {
+border-color: #02436d; /* dark blue */
+background-color:#eee;
+}
+
+
+#directory ul li.active {
+border-color: #02436d; /* dark blue */
+border-bottom: 1px solid #fff;
+background-color:#fff;
+}
+
+#directory ul li.special {
+border:none;
+background-color: #FFF;
+margin:0;
+padding:0;
+}
+
+#directory a {
+/*float: left;*/
+display: block;
+text-decoration: none;
+padding:0;
+color:#aaa;
+font-style:italic;
+padding-left:0.8em;
+padding-right:0.8em;
+padding-top:0.2em;
+}
+
+#directory span {
+/*float: left;*/
+display: block;
+color: #666;
+text-decoration: none;
+padding-left:0.8em;
+padding-right:0.8em;
+padding-top:0.2em;
+}
+
+#file {
+float:left;
+font-size:90%;
+padding-top:1.5em;
+}
+
+#file table {
+text-align:left;
+margin:0;
+border-top:none;
+text-align:center;
+background-color:#fff;
+border-collapse: collapse;
+border: none;
+}
+
+#file table td {
+padding-top:5px;
+padding-bottom:5px;
+}
+
+#file table tr.title {
+background-color:#fff;
+color:#0d75cd;
+}
+
+
+#file table tr:hover{
+background-color: #e3f2ff;
+}
+
+
+#file table tr.title:hover{
+background-color: inherit;
+}
+
+
+#file table th {
+text-align:center;
+border:none;
+
+/*
+background-color:inherit;
+color:inherit;
+border-bottom:1px solid #0d75cd;
+*/
+
+background-color: #ebeadb;
+color:#000;
+border-bottom:1px solid #ccc;
+}
+
+#file table a.dirlink {
+text-decoration:none;
+color:#906f21;
+}
+
+#file table a.dirlink:hover {
+text-decoration:underline overline;
+}
+
+#file table a.filelink {
+text-decoration:none;
+color:#002a78;
+}
+
+#file table a.filelink:hover {
+text-decoration:underline overline;
+}
+
+/*
+#file table td.command {
+text-align:left;
+width:115px;
+}
+
+#file table td.command img {
+padding:0.16em;
+border: 1px solid #fff;
+}
+
+#file table td.command img:hover {
+border: 1px outset #000;
+}
+*/
+
+#file a.consult
+{
+	border: 2px solid #ccc;
+	padding:2px;
+	padding-left:5px;
+	padding-right:5px;
+	background-color:rgb(243,242,235);
+	text-decoration:none;
+	color:#666;
+}
+
+#file a.consult:hover
+{
+	border: 2px solid #02436d;
+}
+
+
+table#search {
+margin-top: 1.5em;
+border:none;
+background-color:#eee;
+height:2.25em;
+font-weight:bold;
+}
+
+table#search span {
+padding-right:0.75em;
+padding-left:0.75em;
+text-transform:uppercase;
+}
+
+
+table#searchresults {
+border:none;
+}
+
+table#searchresults tr.title th {
+border-bottom:1px solid #000;
+}
+
+
+ul#filediradd {
+list-style-type: none;
+text-align: left;
+margin:0;
+padding:0;
+font-size:75%;
+}
+
+ul#filediradd li {
+margin:0;
+padding:0;
+height:2em;
+}
+
+ul#filediradd li.trash {
+background: transparent url(images/trash.gif) left center no-repeat;
+}
+
+ul#filediradd li.file {
+background: transparent url(images/file.gif) left center no-repeat;
+}
+
+ul#filediradd li.directory {
+background: transparent url(images/directory.gif) left center no-repeat;
+}
+
+ul#filediradd li.tab {
+background: transparent url(images/tab.gif) left center no-repeat;
+}
+
+ul#filediradd a {
+margin-left: 2.2em;
+text-decoration:none;
+color:#aaa;
+border:1px solid rgb(243,242,235);
+padding:0.15em;
+/* border:none; */
+margin-right:0.75em;
+}
+
+ul#filediradd a:hover {
+border:1px outset #aaa;
+/* border:none; */
+}
+
+
+#main-copy table.sortable a.sortheader {
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    background-color:none;
+	/*color:#0d75cd;*/
+	color:#000;
+}
+
+#main-copy table.sortable span.sortarrow {
+    color: red;
+    text-decoration: none;
+    font-size:14px;
+}

@@ -1,0 +1,2 @@
+160 MB d'utilisation courante
+L'enregistrement d'un fichier prend le double de sa taille

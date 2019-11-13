@@ -1,0 +1,30 @@
+</td>
+
+
+<td valign="top" align="right" class="rightSideBar">
+	<%-- <div class="rightSideBar"> --%>
+	    <p class="sideBarTitle"><fmt:message key='links'/></p>
+	    <div class="sideBarText">
+		<a href="${PREFIX}/../user/pc/index.jsp"><fmt:message key='user.view'/></a><br/>
+		<a href="${PREFIX}/logout.jsp"><strong><fmt:message key='logout'/>&nbsp;<c:out value="${adminsession.login}"/></strong></a>
+		</div>
+	<%-- </div> --%>
+</td>
+
+
+
+
+</tr>
+</table>
+
+    
+    <!-- ##### Footer ##### -->
+
+    <div id="footer">
+    
+    <div><c:out value="${usernavig.footer}" escapeXml="false"/></div>
+
+    
+    </div>
+  </body>
+</html>
